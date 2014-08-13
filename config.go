@@ -5,6 +5,7 @@ type ClientConfig struct {
 	ClientSecret             string
 	AuthorizeUrl             string
 	TokenUrl                 string
+	InfoUrl					 string
 	RedirectUrl              string
 	Scope                    string
 	ErrorsInStatusCode       bool

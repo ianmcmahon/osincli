@@ -10,6 +10,7 @@ import (
 type clientconfigCache struct {
 	authorizeUrl *url.URL
 	tokenUrl     *url.URL
+	infoUrl		 *url.URL
 }
 
 type Client struct {
@@ -49,6 +50,13 @@ func (c *Client) initialize() error {
 	c.configcache.tokenUrl, err = url.Parse(c.config.TokenUrl)
 	if err != nil {
 		return err
+	}
+
+	if c.config.InfoUrl != "" {
+		c.configcache.infoUrl, err = url.Parse(c.config.InfoUrl)
+		if err != nil {
+			return err
+		}
 	}
 
 	return nil
